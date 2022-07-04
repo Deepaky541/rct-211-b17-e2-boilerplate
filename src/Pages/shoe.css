@@ -1,0 +1,9 @@
+.shoe{
+    border: 1px solid black;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px,max-content));
+    grid-gap:16px;
+    justify-content: center;
+    
+}

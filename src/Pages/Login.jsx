@@ -1,19 +1,42 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { useEffect } from "react";
+import { login } from "../Redux/AuthReducer/action";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = () => { 
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("")
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
+  const location=useLocation();
+  const comingfrom=location.state?.from?.pathname || "/"
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    if(email&&password)
+    {
+      dispatch(login({email,password}))
+      .then((r)=>{
+        if(r.type==="LOGIN_SUCCESS")
+        {
+          navigate(comingfrom);
+      })
+    }
+  }
   return (
     <div>
       <h2>LOGIN</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>User Email</label>
           <br />
-          <input data-cy="login-email" />
+          <input data-cy="login-email" onChange={(e)=>setemail(e.target.value)} />
         </div>
         <div>
           <label>User Password</label>
           <br />
-          <input data-cy="login-password" />
+          <input data-cy="login-password" onChange={(e)=>setpassword(e.target.value)} />
         </div>
         <button type="submit" data-cy="login-submit">
           Loading

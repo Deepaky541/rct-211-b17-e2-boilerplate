@@ -1,15 +1,16 @@
 import React from "react";
+import "./shoecard.css";
 
-const ShoeCard = () => {
-  let shoeId = null;
+const ShoeCard = ({data}) => {
+  let shoeId = data.id;
   return (
-    <div data-cy={`shoe-card-wrapper-${shoeId}`}>
+    <div data-cy={`shoe-card-wrapper-${shoeId}`} className="shoecard" >
       <div>
-        <img data-cy="shoe-card-image" src="" alt="" />
+        <img className="image" data-cy="shoe-card-image" src={data.image} alt="" />
       </div>
       <div>
-        <div data-cy="shoe-name">name</div>
-        <div data-cy="shoe-category">category</div>
+        <div data-cy="shoe-name">{data.name}</div>
+        <div data-cy="shoe-category">{data.category}</div>
       </div>
     </div>
   );
