@@ -10,7 +10,8 @@ const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<Shoes />} />;
       <Route path="/login" element={<Login />} />
-      <Route path="/shoes/:id" element={<ReqAuth>
+      <Route path="/shoes/:id" element={
+      <ReqAuth>
       <SingleShoe />
       </ReqAuth>
       } />

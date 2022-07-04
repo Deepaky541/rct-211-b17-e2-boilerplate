@@ -34,12 +34,12 @@ const Login = () => {
         <div>
           <label>User Email</label>
           <br />
-          <input data-cy="login-email" onChange={(e)=>setemail(e.target.value)} />
+          <input data-cy="login-email" value={email} onChange={(e)=>setemail(e.target.value)} />
         </div>
         <div>
           <label>User Password</label>
           <br />
-          <input data-cy="login-password" onChange={(e)=>setpassword(e.target.value)} />
+          <input data-cy="login-password" value={password} onChange={(e)=>setpassword(e.target.value)} />
         </div>
         <button type="submit" data-cy="login-submit">
           Loading

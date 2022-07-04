@@ -8,7 +8,7 @@ import { getShoes } from "../Redux/AppReducer/action";
 const SingleShoe = () => {
   const {id}=useParams();
   const dispatch=useDispatch();
-  const shoes=useSelector((state)=>state.shoes)
+  const shoes=useSelector((state)=>state.AppReducer.shoes)
   const [currentShoe, setCurrentShoe] = useState({})
  useEffect(() => {
    if(shoes?.length===0)
