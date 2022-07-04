@@ -6,8 +6,8 @@ import { login } from "../Redux/AuthReducer/action";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => { 
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("")
+  const [email, setemail] = useState("eve.holt@reqres.in");
+  const [password, setpassword] = useState("cityslicka");
   const dispatch=useDispatch();
   const navigate=useNavigate();
   const location=useLocation();
@@ -21,9 +21,12 @@ const Login = () => {
         if(r.type==="LOGIN_SUCCESS")
         {
           navigate(comingfrom);
-      })
+      }
     }
+      )
+
   }
+}
   return (
     <div>
       <h2>LOGIN</h2>
