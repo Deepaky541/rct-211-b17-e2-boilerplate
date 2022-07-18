@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
 
@@ -10,7 +9,7 @@ const Filter = () => {
   //in the UI
   
 
-  const dispatch=useDispatch();
+  
   const [searchParams, setsearchParams] = useSearchParams()
   const catFilter = searchParams.getAll("category");
     const [category, setCategory] = useState(catFilter);
@@ -39,8 +38,7 @@ const Filter = () => {
     setsearchParams(params);
   }
   },[setsearchParams])
-  
-  console.log(category);
+
   return (
     <div>
       <h3>Filters</h3>

@@ -8,4 +8,8 @@ const login = (payload) => (dispatch) => {
     .then((r) => dispatch({ type: types.LOGIN_SUCCESS, payload: r.data }))
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };
-export { login };
+
+const logout = () => (dispatch) => {
+  return dispatch({ type: types.LOGOUT_SUCCESS});
+};
+export { login,logout };

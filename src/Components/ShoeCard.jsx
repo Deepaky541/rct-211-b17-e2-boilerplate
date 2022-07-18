@@ -4,7 +4,7 @@ import "./shoecard.css";
 const ShoeCard = ({data}) => {
   let shoeId = data.id;
   return (
-    <div data-cy={`shoe-card-wrapper-${shoeId}`} className="shoecard" >
+    <div data-cy={`shoe-card-wrapper-${shoeId}`} key={shoeId} className="shoecard" >
       <div>
         <img className="image" data-cy="shoe-card-image" src={data.image} alt="" />
       </div>

@@ -26,7 +26,7 @@ const Shoes = () => {
       <Filter />
       <div className="shoe">
         {shoes.map((shoe) => (
-          <Link to={`/shoes/${shoe.id}`}>
+          <Link to={`/shoes/${shoe.id}`} key={shoe.id} >
           <ShoeCard key={shoe.id} data={shoe} />
           </Link>
         ))}

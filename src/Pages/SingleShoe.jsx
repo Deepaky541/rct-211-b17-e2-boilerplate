@@ -25,7 +25,7 @@ const SingleShoe = () => {
      temp && setCurrentShoe(temp);
    }
   }, [shoes,id])
-  console.log(currentShoe);
+  
   
   return (
     <div>

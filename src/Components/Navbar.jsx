@@ -1,7 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../Redux/AuthReducer/action";
 
 const Navbar = () => {
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const log=()=>{
+      dispatch(logout())
+      navigate("/");
+  }
+
   return (
     <div>
       <div data-cy="navbar-home-link">
@@ -15,7 +25,10 @@ const Navbar = () => {
 
       <div>
         {/* Link button to /login page, if the user is not authenticated, else don't show it*/}
-        <button data-cy="navbar-login-button"><Link to="/login">login</Link></button>
+        {
+          isAuth?<button onClick={log}>logout</button>:<Link to="/login"><button>login</button></Link>
+        }
+       
       </div>
     </div>
   );
